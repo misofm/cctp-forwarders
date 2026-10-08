@@ -1,0 +1,36 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.2
+      - run: bun install --frozen-lockfile
+      - run: bun run format:check
+      - run: bun run lint
+      - run: bun run typecheck
+      - run: bun run test
+      - run: bun run build
+  forwarders:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: v1.8.3
+      - working-directory: forwarders/evm
+        run: |
+          forge install foundry-rs/forge-std@v1.16.2 --no-git
+          # Solady v0.1.26, pinned by commit: LibClone fixes every clone address.
+          forge install Vectorized/solady@acd959aa4bd04720d640bf4e6a5c71037510cc4b --no-git
+      # Fork tests need archive RPCs at the pinned Avalanche and Polygon blocks;
+      # run them locally with REQUIRE_FORK=1 until CI has RPC secrets.
+      - working-directory: forwarders/evm
+        run: forge test --no-match-path "test/fork/**"

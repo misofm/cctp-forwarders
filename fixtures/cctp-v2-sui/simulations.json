@@ -1,0 +1,68 @@
+{
+  "_comment": "REAL mainnet SuiGrpcClient.simulateTransaction results (sender 0x..02, unsigned, no gas spent), captured 2026-10-08T15:27:17.656Z against SUI_MAINNET_CCTP_V2.",
+  "isNonceUsed": {
+    "0x71fafcfb6abde60b415c75ea8a45ac4f450c93ea8bbf3028b9893fd949fe3bd7": {
+      "expected": true,
+      "rawResult": {
+        "$kind": "Transaction",
+        "Transaction": {
+          "status": {
+            "success": true,
+            "error": null
+          }
+        },
+        "commandResults": [
+          {
+            "returnValues": [
+              {
+                "bcs": "0x01"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "0x95b0bc721e567020f9924633094a89225d9da253d4b7b85db05351faa1bed54c": {
+      "expected": true,
+      "rawResult": {
+        "$kind": "Transaction",
+        "Transaction": {
+          "status": {
+            "success": true,
+            "error": null
+          }
+        },
+        "commandResults": [
+          {
+            "returnValues": [
+              {
+                "bcs": "0x01"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "0x1fab3ef7d771bac5df1f11bacab0efdc5d83f5a6b3e7d52cb9fa59980ced1c46": {
+      "expected": false,
+      "rawResult": {
+        "$kind": "Transaction",
+        "Transaction": {
+          "status": {
+            "success": true,
+            "error": null
+          }
+        },
+        "commandResults": [
+          {
+            "returnValues": [
+              {
+                "bcs": "0x00"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

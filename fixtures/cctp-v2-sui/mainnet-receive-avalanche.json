@@ -1,0 +1,225 @@
+{
+  "_comment": "REAL mainnet Sui CCTP V2 receive (Avalanche C-Chain Standard transfer (minFinality 2000, maxFee 0, no fee)), read via SuiGrpcClient.getTransaction on 2026-10-08T15:27:17.656Z.",
+  "digest": "4yKcb7RBvq1yoCycvLNhLoMz1B5SUhAKujcC4TvpUi2H",
+  "checkpoint": "331521731",
+  "sender": "0xa8f2973778d5b183373f37bc6b1306c8bbc20a338fb019f4d5f280949d3660df",
+  "status": {
+    "success": true,
+    "error": null
+  },
+  "commands": [
+    {
+      "$kind": "MoveCall",
+      "MoveCall": {
+        "package": "0x16bcfcfc465f96281663a344641c017de84529370e11aa3879d0dce43ad6db87",
+        "module": "receive_message",
+        "function": "receive_message",
+        "typeArguments": [],
+        "arguments": [
+          {
+            "$kind": "Input",
+            "Input": 0
+          },
+          {
+            "$kind": "Input",
+            "Input": 1
+          },
+          {
+            "$kind": "Input",
+            "Input": 2
+          }
+        ]
+      }
+    },
+    {
+      "$kind": "MoveCall",
+      "MoveCall": {
+        "package": "0xeb14978abfe93a37c5d5bf86a0623b923553a5f0e794daac7724f1e2fdbfb830",
+        "module": "handle_receive_message",
+        "function": "prepare_mint",
+        "typeArguments": [
+          "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC"
+        ],
+        "arguments": [
+          {
+            "$kind": "NestedResult",
+            "NestedResult": [0, 0]
+          },
+          {
+            "$kind": "Input",
+            "Input": 3
+          },
+          {
+            "$kind": "Input",
+            "Input": 4
+          }
+        ]
+      }
+    },
+    {
+      "$kind": "MoveCall",
+      "MoveCall": {
+        "package": "0x185ed207c4d64fc594882ab927f9f3c6ff957aad03df8a731ba64378faeeb2bf",
+        "module": "handler",
+        "function": "mint",
+        "typeArguments": [],
+        "arguments": [
+          {
+            "$kind": "Input",
+            "Input": 5
+          },
+          {
+            "$kind": "NestedResult",
+            "NestedResult": [1, 0]
+          },
+          {
+            "$kind": "Input",
+            "Input": 3
+          },
+          {
+            "$kind": "Input",
+            "Input": 6
+          },
+          {
+            "$kind": "Input",
+            "Input": 7
+          }
+        ]
+      }
+    },
+    {
+      "$kind": "MoveCall",
+      "MoveCall": {
+        "package": "0xeb14978abfe93a37c5d5bf86a0623b923553a5f0e794daac7724f1e2fdbfb830",
+        "module": "handle_receive_message",
+        "function": "complete_mint",
+        "typeArguments": [
+          "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC",
+          "0x185ed207c4d64fc594882ab927f9f3c6ff957aad03df8a731ba64378faeeb2bf::handler::Auth"
+        ],
+        "arguments": [
+          {
+            "$kind": "NestedResult",
+            "NestedResult": [2, 0]
+          },
+          {
+            "$kind": "Input",
+            "Input": 3
+          },
+          {
+            "$kind": "Input",
+            "Input": 2
+          }
+        ]
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "$kind": "Pure",
+      "length": 378
+    },
+    {
+      "$kind": "Pure",
+      "length": 132
+    },
+    {
+      "$kind": "Object",
+      "Object": {
+        "$kind": "SharedObject",
+        "SharedObject": {
+          "objectId": "0x0c067f7d325e5b60e3179712e7783534ba1556cbb3d359d8161497e37689230c",
+          "initialSharedVersion": "824760979",
+          "mutable": true
+        }
+      }
+    },
+    {
+      "$kind": "Object",
+      "Object": {
+        "$kind": "SharedObject",
+        "SharedObject": {
+          "objectId": "0x06fb166941cd7bc095edc019d054a753ec3f1e4c25f28f2ecc4a6cfa0a9b1167",
+          "initialSharedVersion": "824760982",
+          "mutable": false
+        }
+      }
+    },
+    {
+      "$kind": "Object",
+      "Object": {
+        "$kind": "SharedObject",
+        "SharedObject": {
+          "objectId": "0x0000000000000000000000000000000000000000000000000000000000000006",
+          "initialSharedVersion": "1",
+          "mutable": false
+        }
+      }
+    },
+    {
+      "$kind": "Object",
+      "Object": {
+        "$kind": "SharedObject",
+        "SharedObject": {
+          "objectId": "0xa32de8a6dd0178fb05f662929d55cddb69a25c26bde4b83f89e36d17ead94c41",
+          "initialSharedVersion": "824760983",
+          "mutable": false
+        }
+      }
+    },
+    {
+      "$kind": "Object",
+      "Object": {
+        "$kind": "SharedObject",
+        "SharedObject": {
+          "objectId": "0x57d6725e7a8b49a7b2a612f6bd66ab5f39fc95332ca48be421c3229d514a6de7",
+          "initialSharedVersion": "313333795",
+          "mutable": true
+        }
+      }
+    },
+    {
+      "$kind": "Object",
+      "Object": {
+        "$kind": "SharedObject",
+        "SharedObject": {
+          "objectId": "0x0000000000000000000000000000000000000000000000000000000000000403",
+          "initialSharedVersion": "65624845",
+          "mutable": false
+        }
+      }
+    }
+  ],
+  "message": "0x00000001000000010000000871fafcfb6abde60b415c75ea8a45ac4f450c93ea8bbf3028b9893fd949fe3bd700000000000000000000000028b5a0e9c621a5badaa536219b3a228c8168cf5df47842a2b5ac4483731927a7500175a9354d2eccd94312aa591ec50b9e8657e60000000000000000000000000000000000000000000000000000000000000000000007d0000007d000000001000000000000000000000000b97ef9ef8734c71904d8002f8b6bc66dd9c48a6ea8f2973778d5b183373f37bc6b1306c8bbc20a338fb019f4d5f280949d3660df000000000000000000000000000000000000000000000000000000000087cda00000000000000000000000004928ed008ef6cc02fc644713b7aae373f36b91f7000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "attestation": "0x87d789cedcb8d655cb53f1baea3b07356eaf9c66fc7df7b2b425392f049cce0e57c42acc6c0d4860a2191408d7117dd899b89439d696e0927531f0d0c1e3faef1cafa96cd79f38ca7fead4e19e07f66380eda2f780029eee322e631e65a82a290f6c709f1b76455057763b0ef284f3e300d2a8baa872a0aa3e94351cbab1dcd8f71c",
+  "events": [
+    {
+      "eventType": "0xecf47609d7da919ea98e7fd04f6e0648a0a79b337aaad373fa37aac8febf19c8::treasury::Mint<0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC>",
+      "json": {
+        "amount": "8900000",
+        "mint_cap": "0x51430d2721d4ecf99d68f9c9343c5cd5cd367c8965733230b51ad369478d3c5e",
+        "recipient": "0xa8f2973778d5b183373f37bc6b1306c8bbc20a338fb019f4d5f280949d3660df"
+      }
+    },
+    {
+      "eventType": "0xeb14978abfe93a37c5d5bf86a0623b923553a5f0e794daac7724f1e2fdbfb830::handle_receive_message::MintAndWithdraw",
+      "json": {
+        "amount": "8900000",
+        "fee_collected": "0",
+        "mint_recipient": "0xa8f2973778d5b183373f37bc6b1306c8bbc20a338fb019f4d5f280949d3660df",
+        "mint_token": "0x3f2e28d163e25042ac7c9543c15675af5aa5d3c27dbc656a67f37f4293a3fdef"
+      }
+    },
+    {
+      "eventType": "0x16bcfcfc465f96281663a344641c017de84529370e11aa3879d0dce43ad6db87::receive_message::MessageReceived",
+      "json": {
+        "caller": "0xa8f2973778d5b183373f37bc6b1306c8bbc20a338fb019f4d5f280949d3660df",
+        "finality_threshold_executed": 2000,
+        "message_body": "AAAAAQAAAAAAAAAAAAAAALl++e+HNMcZBNgAL4trxm3ZxIpuqPKXN3jVsYM3Pze8axMGyLvCCjOPsBn01fKAlJ02YN8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIfNoAAAAAAAAAAAAAAAAEko7QCO9swC/GRHE7eq43Pza5H3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "nonce": "51554809674370925319067915258601275621318852721565882803111318030179614211031",
+        "sender": "0x00000000000000000000000028b5a0e9c621a5badaa536219b3a228c8168cf5d",
+        "source_domain": 1
+      }
+    }
+  ]
+}
