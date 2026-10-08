@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+
+# EVM forwarder: Foundry build artifacts and dependencies
+forwarders/evm/lib/
+forwarders/evm/out/
+forwarders/evm/cache/
+forwarders/evm/broadcast/

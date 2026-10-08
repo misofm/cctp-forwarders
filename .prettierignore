@@ -1,0 +1,9 @@
+bun.lock
+dist
+node_modules
+
+# EVM forwarder: Foundry build artifacts and dependencies
+forwarders/evm/lib
+forwarders/evm/out
+forwarders/evm/cache
+forwarders/evm/broadcast

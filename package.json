@@ -1,0 +1,27 @@
+{
+  "name": "@misofm/cctp-forwarders",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Keyless Avalanche and Polygon PoS forwarders that bridge native USDC to Sui through Circle CCTP",
+  "packageManager": "bun@1.4.2",
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "devDependencies": {
+    "@mysten/sui": "2.30.0",
+    "@noble/hashes": "1.8.0",
+    "@types/node": "26.4.1",
+    "@typescript-eslint/eslint-plugin": "8.70.0",
+    "@typescript-eslint/parser": "8.70.0",
+    "eslint": "10.10.0",
+    "prettier": "3.9.6",
+    "typescript": "6.0.2",
+    "vitest": "4.1.11"
+  }
+}
