@@ -32,6 +32,28 @@ export const EVM_CHAINS: Readonly<
   },
 }
 
+/** Mainnet deployments of the pinned, ownerless instance. */
+export const MAINNET_DEPLOYMENTS = {
+  avalanche: {
+    runtimeHash:
+      "0x8ec3eb82501a907ddca2904fb8c139dcc5476e706d0deb11957982e26230e511",
+    transaction:
+      "0x72ed6721e6a597d063139d9b9ce9ce7697baa6f8ed8db733336eb37423e9ee7b",
+    block: 98838725,
+    gasUsed: 517570,
+    sourceVerified: true,
+  },
+  polygon: {
+    runtimeHash:
+      "0x3e3f7b6b0d39c5e16e544500ceff74479593972751d6056678ae0c2f4a98f5ec",
+    transaction:
+      "0x4bf880c435f2abd01f734f352e0eb17186c9401f25214351de7983ac9dc24ecc",
+    block: 96364407,
+    gasUsed: 541090,
+    sourceVerified: true,
+  },
+} as const
+
 /**
  * The `Forwarder` instance (forwarders/evm/src/Forwarder.sol), deployed
  * through the keyless CREATE2 deployer with salt 0 from init code that is the

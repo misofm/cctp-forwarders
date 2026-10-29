@@ -1,6 +1,9 @@
 # EVM forwarder: Avalanche and Polygon
 
-**Not deployed. No funded transaction has been made.** One contract,
+**Mainnet instances are deployed and source-verified on Avalanche and Polygon.**
+Deployment records are in `MAINNET_DEPLOYMENTS` in `src/evm-forwarder.ts` at the
+repository root. Only deployment gas has been spent; the funded USDC burn,
+attestation and Sui mint path still needs an end-to-end test. One contract,
 `src/Forwarder.sol`, deployed once per chain through the keyless CREATE2
 deployer from the same init code, so it has the same address on every chain;
 it looks up the chain's native USDC from Circle's messenger at construction.
