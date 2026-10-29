@@ -17,9 +17,15 @@ argument, failure modes, launch gates and the user disclosure:
 **The ownerless instances are deployed on Avalanche and Polygon mainnet and
 source-verified on Sourcify.** Deployment transactions and blocks live in
 `MAINNET_DEPLOYMENTS` in `src/evm-forwarder.ts`. Both runtimes and an address
-vector were checked against the pinned build. No USDC has been sent through
-these forwarders yet; no forwarder burn has been attested or minted. Circle's sandbox has no Sui V2 route, so the first
-end-to-end run must be a bounded mainnet test.
+vector were checked against the pinned build. A funded Stripe-hosted Polygon
+pilot delivered 10 native USDC through a forwarder, Circle attestation and the
+Sui mint module; the recipient received all 10 USDC. Avalanche forwarding and
+other onramp providers still need their own funded tests. Circle's sandbox has
+no Sui V2 route.
+
+Crank services must estimate gas for each transaction and add headroom. The
+pilot's first 250,000-gas attempt reverted; the successful retry used a live
+estimate plus 30%. Receipt gas used is after refunds and is not a safe gas limit.
 
 ## Layout
 

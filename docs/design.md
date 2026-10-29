@@ -3,8 +3,9 @@
 Status: **ownerless instances deployed and source-verified on Avalanche C-Chain
 and Polygon PoS mainnet.** Deployment metadata lives in `MAINNET_DEPLOYMENTS`
 in `src/evm-forwarder.ts`. Live runtimes and an address vector match the pinned
-build. Fork tests pass, but no USDC burn from a forwarder has been attested or
-minted yet.
+build. A funded Stripe-hosted Polygon pilot delivered 10 native USDC through
+the forwarder and CCTP mint module to its Sui recipient, with zero CCTP fee in
+that transfer. The Avalanche route still needs a funded end-to-end test.
 
 ## Goal
 
@@ -338,10 +339,18 @@ them command for command, a structural check, and their attested messages carry
 accepts destination caller 0, requires `finalityThresholdExecuted ≥ 500` and
 bounds `feeExecuted ≤ maxFee` and `< amount`.
 
-Not verified: any forwarder burn attested or minted; Circle's off-chain fee and
-whether Standard stays free; anything executed on Sui by this code; that an
-onramp provider pays an Avalanche or Polygon contract address in live mode.
-Iris sandbox has no Sui V2 route, so there is no testnet path.
+A funded Polygon pilot now verifies Stripe-hosted payment to the counterfactual
+forwarder, native-USDC burn, Circle attestation and execution of this module's
+Sui mint PTB. The Sui transaction credited exactly 10 USDC to the intended
+recipient and the message nonce is used. The first crank failed with a fixed
+250,000-gas limit; recovery verified its finalized revert before signing a new
+transaction using the live estimate plus 30%. The application journals and
+reuses uncertain signed transactions, and uses a dedicated Polygon RPC with
+public failover after a public provider rejected log reads.
+
+Not verified: a funded Avalanche forwarder transfer, other onramp providers,
+Circle's future off-chain fee policy or whether Standard stays free. Iris
+sandbox has no Sui V2 route, so there is no testnet path.
 
 ## Launch gates, in order
 
