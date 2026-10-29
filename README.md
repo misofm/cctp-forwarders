@@ -14,8 +14,11 @@ way to send funds anywhere but the committed Sui address. Design, safety
 argument, failure modes, launch gates and the user disclosure:
 [docs/design.md](docs/design.md).
 
-**Nothing is deployed, nothing has been funded, and no forwarder burn has been
-attested or minted.** Circle's sandbox has no Sui V2 route, so the first
+**The ownerless instances are deployed on Avalanche and Polygon mainnet and
+source-verified on Sourcify.** Deployment transactions and blocks live in
+`MAINNET_DEPLOYMENTS` in `src/evm-forwarder.ts`. Both runtimes and an address
+vector were checked against the pinned build. No USDC has been sent through
+these forwarders yet; no forwarder burn has been attested or minted. Circle's sandbox has no Sui V2 route, so the first
 end-to-end run must be a bounded mainnet test.
 
 ## Layout
@@ -53,5 +56,7 @@ bun run build
 (cd forwarders/evm && REQUIRE_FORK=1 forge test)
 ```
 
-This package is private and is not published to a registry. App UI and
+This package is private and is not published to a registry. Build and pack it
+for API consumers; the exported subpaths are `evm-forwarder`, `cctp-v2` and
+`cctp-v2-sui`. App UI and
 authentication live in `misofm/app`.

@@ -1,8 +1,10 @@
 # Design and launch
 
-Status: **tested locally and on Avalanche C-Chain and Polygon PoS mainnet
-forks. Nothing is deployed, no funded transaction has been made, and no burn
-from a forwarder has been attested or minted.**
+Status: **ownerless instances deployed and source-verified on Avalanche C-Chain
+and Polygon PoS mainnet.** Deployment metadata lives in `MAINNET_DEPLOYMENTS`
+in `src/evm-forwarder.ts`. Live runtimes and an address vector match the pinned
+build. Fork tests pass, but no USDC burn from a forwarder has been attested or
+minted yet.
 
 ## Goal
 
